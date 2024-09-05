@@ -43,27 +43,53 @@ export default function ProductPage({ params }: { params: { id: string } }) {
       {/* ヘッダーを追加 */}
       <Header />
 
-      <h1>{product.name}</h1>
-      <Image
-        src={product.image}
-        alt={product.name}
-        width={400}
-        height={400}
-        className="object-cover"
-      />
-      <p>{product.description}</p>
+      {/* 商品名を大きく表示 */}
+      <h1 className="text-4xl font-bold text-center my-6">{product.name}</h1>
 
-      {/* 購入数を決める部分 */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
-        <button onClick={decreaseQuantity}>-</button>
-        <span>{quantity}</span>
-        <button onClick={increaseQuantity}>+</button>
+      {/* 商品画像 */}
+      <div className="flex justify-center mb-6">
+        <Image
+          src={product.image}
+          alt={product.name}
+          width={400}
+          height={400}
+          className="object-cover rounded-lg"
+        />
       </div>
 
-      <Link href={`/purchase?product=${product.name}`}>
-        <button style={{ marginTop: '20px' }}>買う</button>
-      </Link>
+      {/* 商品説明 */}
+      <p className="text-center text-lg mb-6">{product.description}</p>
+
+      {/* 購入数を決める部分と購入ボタンを中央寄せ */}
+      <div className="flex flex-col items-center gap-4">
+        <div className="flex items-center gap-4">
+          {/* - ボタン */}
+          <button
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+            onClick={decreaseQuantity}
+          >
+            -
+          </button>
+
+          {/* 数量 */}
+          <span className="text-2xl font-bold">{quantity}</span>
+
+          {/* + ボタン */}
+          <button
+            className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition"
+            onClick={increaseQuantity}
+          >
+            +
+          </button>
+        </div>
+
+        {/* 買うボタン */}
+        <Link href={`/purchase?product=${product.name}`}>
+          <button className="bg-green-500 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-green-700 transition">
+            買う
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }
-
