@@ -104,3 +104,9 @@ body {
 .buy-button:hover {
   background-color: darkgreen;
 }
+
+.product-price {
+  text-align: center;
+  font-size: 1.2rem; /* 文字サイズを調整 */
+  margin-bottom: 20px;
+}
