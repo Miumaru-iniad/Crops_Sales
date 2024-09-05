@@ -1,4 +1,5 @@
 // app/purchase/page.tsx
+"use client";  // これを追加
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
