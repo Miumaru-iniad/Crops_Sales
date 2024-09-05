@@ -1,8 +1,8 @@
 "use client";
 
-import Link from 'next/link';
 import Image from 'next/image';
-import Header from './components/Header';  // ヘッダーコンポーネントをインポート
+import Link from 'next/link';
+import Header from './components/Header'; // ヘッダーコンポーネントをインポート
 
 interface Product {
   id: string;
@@ -20,23 +20,26 @@ const products: Product[] = [
 export default function Home() {
   return (
     <div>
-      {/* ヘッダーをページの最上部に追加 */}
+      {/* ヘッダーを追加 */}
       <Header />
 
-      <h1>製品一覧</h1>
-      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {products.map((product) => (
-          <li key={product.id} className="border p-4">
+      <h1 className="text-4xl font-bold text-center my-6">製品一覧</h1>
+
+      <ul className="flex flex-wrap justify-center gap-6">
+        {products.map(product => (
+          <li key={product.id} className="border p-4 w-72 text-center">
             <Link href={`/product/${product.id}`}>
               <a>
+                {/* 画像を縦のサイズに合わせて表示 */}
                 <Image
                   src={product.image}
                   alt={product.name}
                   width={200}
                   height={200}
-                  className="object-cover"
+                  className="object-cover h-48 w-full"
                 />
-                <h2>{product.name}</h2>
+                {/* 製品名を太字にして少し大きく */}
+                <h2 className="font-bold text-lg mt-2">{product.name}</h2>
               </a>
             </Link>
           </li>
