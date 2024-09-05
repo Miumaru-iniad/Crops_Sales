@@ -13,7 +13,6 @@ export default function Header() {
               src="/images/head.jpg" 
               alt="Header Image"
               layout="intrinsic" // アスペクト比を保ちながら表示
-              width={0}          // 幅は制約しない
               height={80}        // 縦幅のみ制限
               style={{ objectFit: 'contain' }} 
             />

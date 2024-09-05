@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import Header from '../../components/Header'; // ヘッダーコンポーネントをインポート
 
 interface Product {
   name: string;
@@ -39,6 +40,9 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
   return (
     <div>
+      {/* ヘッダーを追加 */}
+      <Header />
+
       <h1>{product.name}</h1>
       <Image
         src={product.image}
@@ -62,3 +66,4 @@ export default function ProductPage({ params }: { params: { id: string } }) {
     </div>
   );
 }
+
