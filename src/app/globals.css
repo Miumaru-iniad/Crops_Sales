@@ -25,3 +25,82 @@ body {
     text-wrap: balance;
   }
 }
+
+/* ヘッダーと商品ページ共通のスタイル */
+.product-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.product-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.product-image {
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.product-description {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* 購入関連のスタイル */
+.purchase-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.decrease-button, .increase-button {
+  background-color: blue;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.decrease-button {
+  background-color: blue;
+}
+
+.increase-button {
+  background-color: red;
+}
+
+.decrease-button:hover, .increase-button:hover {
+  opacity: 0.8;
+}
+
+.quantity {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.buy-button {
+  background-color: green;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.buy-button:hover {
+  background-color: darkgreen;
+}
