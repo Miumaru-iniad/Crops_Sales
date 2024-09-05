@@ -1,5 +1,5 @@
 // app/product/[id]/page.tsx
-import { useRouter } from 'next/router';
+//import { useRouter } from 'next/router';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
