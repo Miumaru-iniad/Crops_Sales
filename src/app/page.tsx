@@ -23,14 +23,16 @@ export default function Home() {
       {/* ヘッダーを追加 */}
       <Header />
 
-      <h1 className="text-4xl font-bold text-center my-6">製品一覧</h1>
+      {/* 製品一覧の見出しを大きく表示 */}
+      <h1 className="text-5xl font-bold text-center my-6">製品一覧</h1>
 
-      <ul className="flex flex-wrap justify-center gap-6">
+      {/* 商品を横に並べる */}
+      <ul className="flex flex-wrap justify-center gap-8">
         {products.map(product => (
           <li key={product.id} className="border p-4 w-72 text-center">
             <Link href={`/product/${product.id}`}>
               <a>
-                {/* 画像を縦のサイズに合わせて表示 */}
+                {/* 画像の高さを統一 */}
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -38,8 +40,8 @@ export default function Home() {
                   height={200}
                   className="object-cover h-48 w-full"
                 />
-                {/* 製品名を太字にして少し大きく */}
-                <h2 className="font-bold text-lg mt-2">{product.name}</h2>
+                {/* 製品名を太字にして大きく表示 */}
+                <h2 className="font-bold text-xl mt-2">{product.name}</h2>
               </a>
             </Link>
           </li>
@@ -48,3 +50,4 @@ export default function Home() {
     </div>
   );
 }
+

@@ -1,8 +1,6 @@
 // tailwind.config.ts
 module.exports = {
-  content: [
-    //'./app/**/*.{js,ts,jsx,tsx}', // appディレクトリ内のすべてのファイルに適用
-  ],
+  content: [],
   theme: {
     extend: {
       colors: {
