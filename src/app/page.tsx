@@ -1,6 +1,8 @@
-// app/page.tsx
+"use client";
+
 import Link from 'next/link';
 import Image from 'next/image';
+import Header from './components/Header';  // ヘッダーコンポーネントをインポート
 
 interface Product {
   id: string;
@@ -18,9 +20,12 @@ const products: Product[] = [
 export default function Home() {
   return (
     <div>
+      {/* ヘッダーをページの最上部に追加 */}
+      <Header />
+
       <h1>製品一覧</h1>
       <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {products.map(product => (
+        {products.map((product) => (
           <li key={product.id} className="border p-4">
             <Link href={`/product/${product.id}`}>
               <a>
@@ -40,4 +45,3 @@ export default function Home() {
     </div>
   );
 }
-
