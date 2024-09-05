@@ -1,19 +1,27 @@
-import type { Config } from "tailwindcss";
-
-const config: Config = {
+// tailwind.config.ts
+module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './app/**/*.{js,ts,jsx,tsx}', // appディレクトリ内のすべてのファイルに適用
   ],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        'primary-green': '#516753', // 家庭菜園に合うカスタムの緑色
+        'secondary-green': '#6BAE6E', // 購入ボタンなどで使える緑色
+        'primary-red': '#E53E3E', // 減少ボタン用の赤
+      },
+      spacing: {
+        '72': '18rem', // 画像サイズや余白の調整に
+        '80': '20rem',
+      },
+      fontSize: {
+        '2xl': '1.5rem',
+        '3xl': '1.75rem',
+      },
+      boxShadow: {
+        'custom-light': '0 4px 6px rgba(0, 0, 0, 0.1)', // カスタムのシャドウ
       },
     },
   },
   plugins: [],
 };
-export default config;
